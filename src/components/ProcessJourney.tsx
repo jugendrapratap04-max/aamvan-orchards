@@ -13,9 +13,9 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
   const currentStep = steps[activeStep];
 
   return (
-    <section id="process" className="relative py-24 bg-[#08170f] overflow-hidden">
+    <section id="process" className="relative py-20 sm:py-24 bg-[#08170f] overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border-amber-500/20 text-amber-400 text-xs font-mono tracking-widest uppercase mb-4">
             <Layers className="w-3.5 h-3.5" />
             <span>Orchard to Destination</span>
@@ -28,12 +28,12 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-10 sm:mb-12">
           {steps.map((step, idx) => (
             <button
               key={step.number}
               onClick={() => setActiveStep(idx)}
-              className={`p-4 rounded-2xl text-left transition-all duration-300 border relative ${
+              className={`p-3 sm:p-4 rounded-2xl text-left transition-all duration-300 border relative ${
                 activeStep === idx
                   ? 'glass-panel border-amber-400 bg-amber-500/10 text-white shadow-[0_0_25px_rgba(245,158,11,0.25)]'
                   : 'bg-black/30 border-white/5 text-slate-400 hover:border-amber-500/30 hover:text-slate-200'
@@ -42,7 +42,7 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
               <div className="font-mono text-xs font-bold text-amber-400 mb-1">
                 {step.number}
               </div>
-              <div className="text-xs font-medium font-serif line-clamp-1">
+              <div className="text-[11px] sm:text-xs font-medium font-serif line-clamp-1">
                 {step.title}
               </div>
               {activeStep === idx && (
@@ -52,8 +52,8 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
           ))}
         </div>
 
-        <div className="glass-panel rounded-3xl border-amber-500/20 p-6 sm:p-10 shadow-2xl overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="glass-panel rounded-3xl border-amber-500/20 p-5 sm:p-10 shadow-2xl overflow-hidden max-w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
             <div className="relative aspect-4/3 rounded-2xl overflow-hidden group shadow-xl">
               <img
                 src={currentStep.image}
@@ -61,7 +61,7 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute top-4 left-4 font-mono text-xs text-amber-400 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-amber-500/30">
+              <div className="absolute top-4 left-4 font-mono text-[10px] sm:text-xs text-amber-400 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-amber-500/30">
                 STAGE {currentStep.number} OF 06
               </div>
             </div>
@@ -71,7 +71,7 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
                 <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">
                   {currentStep.subtitle}
                 </div>
-                <h3 className="text-2xl sm:text-4xl font-serif text-white mb-4">
+                <h3 className="text-2xl sm:text-4xl font-serif text-white mb-3 sm:mb-4">
                   {currentStep.title}
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base font-light leading-relaxed">
@@ -84,7 +84,7 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
                   Process Stage Highlights:
                 </div>
                 {currentStep.details.map((detail, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-sm text-slate-200 font-light">
+                  <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-200 font-light">
                     <div className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                       <Check className="w-3.5 h-3.5" />
                     </div>
@@ -93,17 +93,17 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-6">
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 pt-6 border-t border-white/5">
                 <button
                   onClick={() => setActiveStep((prev) => (prev > 0 ? prev - 1 : steps.length - 1))}
-                  className="text-xs font-mono text-slate-400 hover:text-amber-400"
+                  className="text-xs font-mono text-slate-400 hover:text-amber-400 py-1"
                 >
-                  ← Previous Stage
+                  ← Previous
                 </button>
 
                 <button
                   onClick={() => onOpenInquiry('bulk')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all shrink-0"
                 >
                   <span>Discuss Bulk Supply</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -111,9 +111,9 @@ export const ProcessJourney: React.FC<ProcessJourneyProps> = ({ onOpenInquiry })
 
                 <button
                   onClick={() => setActiveStep((prev) => (prev < steps.length - 1 ? prev + 1 : 0))}
-                  className="text-xs font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1"
+                  className="text-xs font-mono text-slate-400 hover:text-amber-400 flex items-center gap-1 py-1"
                 >
-                  <span>Next Stage</span>
+                  <span>Next</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>

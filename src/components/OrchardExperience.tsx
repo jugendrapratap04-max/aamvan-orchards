@@ -8,9 +8,9 @@ interface OrchardExperienceProps {
 
 export const OrchardExperience: React.FC<OrchardExperienceProps> = ({ onOpenInquiry }) => {
   return (
-    <section id="orchard" className="relative py-24 bg-[#050d09] overflow-hidden">
+    <section id="orchard" className="relative py-20 sm:py-24 bg-[#050d09] overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border-amber-500/20 text-amber-400 text-xs font-mono tracking-widest uppercase mb-4">
             <Eye className="w-3.5 h-3.5" />
             <span>{BUSINESS_CONFIG.orchardExperience.badge}</span>
@@ -23,8 +23,8 @@ export const OrchardExperience: React.FC<OrchardExperienceProps> = ({ onOpenInqu
           </p>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden glass-panel border-amber-500/20 shadow-2xl p-3">
-          <div className="relative h-[480px] sm:h-[580px] w-full rounded-2xl overflow-hidden">
+        <div className="relative rounded-3xl overflow-hidden glass-panel border-amber-500/20 shadow-2xl p-2 sm:p-3 max-w-full">
+          <div className="relative h-[520px] sm:h-[580px] w-full rounded-2xl overflow-hidden">
             <img
               src="/images/orchard_visit.jpg"
               alt="Orchard Visit Experience"
@@ -32,44 +32,44 @@ export const OrchardExperience: React.FC<OrchardExperienceProps> = ({ onOpenInqu
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050d09] via-black/30 to-transparent" />
             
-            <div className="absolute top-6 right-6 glass-panel px-4 py-2 rounded-full border-white/20 text-xs font-mono text-white flex items-center gap-2 backdrop-blur-md">
-              <MapPin className="w-4 h-4 text-amber-400" />
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 glass-panel px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border-white/20 text-xs font-mono text-white flex items-center gap-2 backdrop-blur-md">
+              <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
               <span>Kasganj, Uttar Pradesh</span>
             </div>
 
-            <div className="absolute bottom-6 left-6 right-6 md:left-10 md:right-auto md:max-w-xl">
-              <div className="glass-panel p-6 sm:p-8 rounded-2xl border-amber-500/30 backdrop-blur-xl bg-[#050d09]/85 shadow-2xl animate-in slide-in-from-bottom-4">
-                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-amber-400 uppercase mb-2">
-                  <Calendar className="w-4 h-4" />
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-xl">
+              <div className="glass-panel p-5 sm:p-8 rounded-2xl border-amber-500/30 backdrop-blur-xl bg-[#050d09]/85 shadow-2xl animate-in slide-in-from-bottom-4">
+                <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono tracking-widest text-amber-400 uppercase mb-2">
+                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{BUSINESS_CONFIG.orchardExperience.floatingCardTitle}</span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-serif text-white mb-3">
+                <h3 className="text-lg sm:text-2xl font-serif text-white mb-2 sm:mb-3">
                   "See the source. Understand the quality. Meet the supplier."
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-300 font-light mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 font-light mb-4 sm:mb-6 leading-relaxed">
                   Serious bulk buyers are welcome to visit our mango orchards in Kasganj, Uttar Pradesh, see the fruit at source, and discuss their requirements directly with us.
                 </p>
 
-                <div className="flex flex-wrap gap-4 text-xs font-mono text-emerald-400 mb-6">
+                <div className="flex flex-wrap gap-3 sm:gap-4 text-[11px] sm:text-xs font-mono text-emerald-400 mb-5 sm:mb-6">
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>See Fruit at Source</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>Direct Owner Meeting</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>Discuss Requirements</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => onOpenInquiry('orchard')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-3 rounded-full text-sm font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg hover:scale-105"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg hover:scale-105"
                 >
                   <Users className="w-4 h-4" />
                   <span>Plan an Orchard Visit</span>

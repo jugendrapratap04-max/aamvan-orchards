@@ -12,7 +12,7 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
   const currentPreset = BUSINESS_CONFIG.bulkSupply.calculatorPresets[selectedPreset];
 
   return (
-    <section id="bulk-supply" className="relative py-24 bg-[#050d09] overflow-hidden">
+    <section id="bulk-supply" className="relative py-20 sm:py-24 bg-[#050d09] overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
@@ -44,7 +44,7 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden glass-panel border-amber-500/20 p-2 group shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden glass-panel border-amber-500/20 p-2 group shadow-2xl max-w-full">
             <div className="relative aspect-4/3 rounded-2xl overflow-hidden">
               <img
                 src={BUSINESS_CONFIG.gallery[1].image}
@@ -53,13 +53,13 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="glass-panel p-4 rounded-xl border-white/10 backdrop-blur-md">
-                  <div className="flex items-center justify-between text-xs font-mono text-amber-400 mb-1">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="glass-panel p-3.5 sm:p-4 rounded-xl border-white/10 backdrop-blur-md">
+                  <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono text-amber-400 mb-1">
                     <span>BULK PACKAGING SPECIFICATION</span>
                     <span>FRESH HARVEST</span>
                   </div>
-                  <div className="text-base font-semibold text-white">
+                  <div className="text-sm sm:text-base font-semibold text-white">
                     Ventilated Wooden & Heavy Duty Plastic Crates
                   </div>
                 </div>
@@ -68,10 +68,10 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
           </div>
         </div>
 
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border-amber-500/20 shadow-2xl relative overflow-hidden">
-          <div className="absolute -right-16 -top-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="glass-panel rounded-3xl p-6 sm:p-12 border-amber-500/20 shadow-2xl relative overflow-hidden max-w-full">
+          <div className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-10 pb-8 border-b border-white/10">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-white/10">
             <div>
               <div className="flex items-center gap-2 text-amber-400 font-mono text-xs uppercase tracking-widest mb-2">
                 <Calculator className="w-4 h-4" />
@@ -87,18 +87,18 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
             {BUSINESS_CONFIG.bulkSupply.calculatorPresets.map((preset, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedPreset(index)}
-                className={`p-5 rounded-2xl text-left transition-all duration-300 border ${
+                className={`p-4 sm:p-5 rounded-2xl text-left transition-all duration-300 border ${
                   selectedPreset === index
                     ? 'bg-gradient-to-br from-amber-500/20 to-emerald-950/80 border-amber-400 text-white shadow-[0_0_20px_rgba(245,158,11,0.2)]'
                     : 'glass-panel border-white/5 text-slate-300 hover:border-amber-500/30 hover:text-white'
                 }`}
               >
-                <div className="text-lg font-serif font-bold text-amber-400 mb-1">
+                <div className="text-base sm:text-lg font-serif font-bold text-amber-400 mb-1">
                   {preset.label}
                 </div>
                 <div className="text-xs font-mono text-slate-400 mb-2">
@@ -111,12 +111,12 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
             ))}
           </div>
 
-          <div className="bg-[#0b1d13]/80 rounded-2xl p-6 border border-emerald-500/20 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-[#0b1d13]/80 rounded-2xl p-5 sm:p-6 border border-emerald-500/20 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-center md:text-left">
-              <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+              <div className="text-[11px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider">
                 Selected Commercial Scale
               </div>
-              <div className="text-lg font-semibold text-white">
+              <div className="text-base sm:text-lg font-semibold text-white">
                 <span className="text-amber-400">{currentPreset.label}</span> ({currentPreset.scale})
               </div>
               <div className="text-xs text-emerald-400">
@@ -126,7 +126,7 @@ export const BulkSupply: React.FC<BulkSupplyProps> = ({ onOpenInquiry }) => {
 
             <button
               onClick={() => onOpenInquiry('bulk', currentPreset.label)}
-              className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg hover:scale-105 shrink-0"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg hover:scale-105 shrink-0"
             >
               <span>Discuss This Commercial Requirement</span>
               <ArrowRight className="w-4 h-4" />

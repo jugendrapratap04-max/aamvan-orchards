@@ -9,7 +9,6 @@ import { OrchardExperience } from './components/OrchardExperience';
 import { ProcessJourney } from './components/ProcessJourney';
 import { LogisticsSection } from './components/LogisticsSection';
 import { WhoWeServe } from './components/WhoWeServe';
-import { PhotoGallery } from './components/PhotoGallery';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { InquiryModal } from './components/InquiryModal';
@@ -44,7 +43,6 @@ export function App() {
         <ProcessJourney onOpenInquiry={handleOpenInquiry} />
         <LogisticsSection onOpenInquiry={handleOpenInquiry} />
         <WhoWeServe onOpenInquiry={handleOpenInquiry} />
-        <PhotoGallery />
         <ContactSection onOpenInquiry={handleOpenInquiry} />
       </main>
 
